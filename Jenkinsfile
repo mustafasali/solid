@@ -11,7 +11,8 @@ pipeline {
         stage('Checkpoint') {
           steps {
             echo 'Build Stage'
-            sh 'date'
+            sh '''date
+ls -lah'''
           }
         }
         stage('Requirement') {
