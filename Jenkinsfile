@@ -12,15 +12,17 @@ pipeline {
           steps {
             echo 'Build Stage'
             sh '''date
-ls -lah'''
+ls -lah
+whoami'''
           }
         }
         stage('Requirement') {
           steps {
-            withEnv(["HOME=${env.WORKSPACE}"]) {
-            sh '''python --version
+            withEnv(overrides: ["HOME=${env.WORKSPACE}"]) {
+              sh '''python --version
 pip install pylint --user'''
-           }
+            }
+
           }
         }
       }
