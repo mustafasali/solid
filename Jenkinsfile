@@ -17,7 +17,8 @@ ls -lah'''
         }
         stage('Requirement') {
           steps {
-            sh 'python --version'
+            sh '''python --version
+pip install pylint'''
           }
         }
       }
