@@ -25,6 +25,14 @@ pip install pylint --user'''
 
           }
         }
+        stage('Setup Virtualenv') {
+          steps {
+            sh '''sudo pip install virtualenv
+mkdir -p ~/.virtualenvs
+virtualenv ~/.virtualenvs/pylint
+. ~/.virtualenv/pylint/bin/activate'''
+          }
+        }
       }
     }
     stage('Static Code Scan') {
