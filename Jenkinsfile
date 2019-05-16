@@ -32,7 +32,6 @@ pip install pylint --user'''
         echo 'PEP-8 Style Check'
         sh '''
 
-which pylint
 pylint --disable=C command.py'''
       }
     }
