@@ -25,7 +25,7 @@ ls -lah'''
     stage('Static Code Scan') {
       steps {
         echo 'PEP-8 Style Check'
-        sh 'pylint --disable=C command.py || true'
+        sh '/usr/bin/pylint --disable=C command.py'
       }
     }
   }
