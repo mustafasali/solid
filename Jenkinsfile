@@ -13,7 +13,7 @@ pipeline {
             echo 'Build Stage'
             sh '''date
 ls -lah
-whoami'''
+who -u'''
           }
         }
         stage('Requirement') {
