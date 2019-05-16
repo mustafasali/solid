@@ -17,8 +17,10 @@ ls -lah'''
         }
         stage('Requirement') {
           steps {
+            withEnv(["HOME=${env.WORKSPACE}"]) {
             sh '''python --version
 pip install pylint --user'''
+           }
           }
         }
       }
