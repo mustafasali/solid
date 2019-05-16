@@ -30,7 +30,10 @@ pip install pylint --user'''
     stage('Static Code Scan') {
       steps {
         echo 'PEP-8 Style Check'
-        sh '/usr/bin/pylint --disable=C command.py'
+        sh '''
+
+which pylint
+pylint --disable=C command.py'''
       }
     }
   }
