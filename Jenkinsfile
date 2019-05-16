@@ -7,8 +7,20 @@ pipeline {
   }
   stages {
     stage('Build') {
-      steps {
-        echo 'Build Stage'
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Build Stage'
+          }
+        }
+        stage('Requirement') {
+          steps {
+            script {
+              sh 'python --version'
+            }
+
+          }
+        }
       }
     }
   }
