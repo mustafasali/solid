@@ -8,9 +8,10 @@ pipeline {
   stages {
     stage('Build') {
       parallel {
-        stage('Build') {
+        stage('Checkpoint') {
           steps {
             echo 'Build Stage'
+            sh 'date'
           }
         }
         stage('Requirement') {
