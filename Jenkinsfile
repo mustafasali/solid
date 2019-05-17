@@ -18,8 +18,10 @@ who -u'''
         }
         stage('Install Packages') {
           steps {
-            sh '''python --version
-pip install pylint --user'''
+             withEnv(["HOME=${env.WORKSPACE}"]) {
+                    sh 'python --version'
+                    sh 'pip install pylint --user'
+                }
           }
         }
       }
