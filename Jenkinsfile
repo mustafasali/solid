@@ -16,14 +16,6 @@ ls -lah
 who -u'''
           }
         }
-        stage('Setup Virtualenv') {
-          steps {
-            sh '''pip install virtualenv
-mkdir -p ~/.virtualenvs
-virtualenv ~/.virtualenvs/pylint
-. ~/.virtualenv/pylint/bin/activate'''
-          }
-        }
         stage('Install Packages') {
           steps {
             sh '''python --version
