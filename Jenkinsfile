@@ -16,21 +16,18 @@ ls -lah
 who -u'''
           }
         }
-        stage('Requirement') {
-          steps {
-            withEnv(overrides: ["HOME=${env.WORKSPACE}"]) {
-              sh '''python --version
-pip install pylint --user'''
-            }
-
-          }
-        }
         stage('Setup Virtualenv') {
           steps {
             sh '''sudo pip install virtualenv
 mkdir -p ~/.virtualenvs
 virtualenv ~/.virtualenvs/pylint
 . ~/.virtualenv/pylint/bin/activate'''
+          }
+        }
+        stage('Install Packages') {
+          steps {
+            sh '''python --version
+pip install pylint --user'''
           }
         }
       }
