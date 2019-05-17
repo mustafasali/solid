@@ -18,7 +18,7 @@ who -u'''
         }
         stage('Setup Virtualenv') {
           steps {
-            sh '''sudo pip install virtualenv
+            sh '''pip install virtualenv
 mkdir -p ~/.virtualenvs
 virtualenv ~/.virtualenvs/pylint
 . ~/.virtualenv/pylint/bin/activate'''
